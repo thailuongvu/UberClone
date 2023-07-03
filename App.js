@@ -15,7 +15,8 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator  initialRouteName="Home" screenOptions={{tabBarActiveTintColor:'tomato',tabBarInActiveTintColor:'grey'}}> 
+      <Tab.Navigator  initialRouteName="Home" screenOptions={{tabBarActiveTintColor:'tomato',tabBarInActiveTintColor:'grey',
+                        headerShown:false}}> 
         
         <Tab.Screen name="Home" component={Home} options={{
           
@@ -47,4 +48,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+
 

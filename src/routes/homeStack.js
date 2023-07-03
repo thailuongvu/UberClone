@@ -6,28 +6,25 @@ import { SafeAreaView } from 'react-native-web';
 import Separator from '../components/separators';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import homeScreen from '../screens/home';
 import rideScreen from '../screens/ride';
-const Stack = createStackNavigator();
-export default function Home() {
-  return (
-    
-    // <Stack.Navigator initialRouteName="Home">
-    //   <Stack.Screen name="Home" component={homeScreen} />
-    //   <Stack.Screen name="rideScreen" component={rideScreen} />
-    // </Stack.Navigator>
-    <View>
-      
-    </View>
 
+
+
+const HomeStack = createNativeStackNavigator();
+
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator screenOptions={{
+     
+    }}>
+      <HomeStack.Screen name="Home" component={homeScreen}/>
+      
+      <HomeStack.Screen name="rideScreen" component={rideScreen } />
+    </HomeStack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    
-  },
-});
+
+export default HomeStackScreen
