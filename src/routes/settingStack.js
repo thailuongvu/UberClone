@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 export default function Setting() {
   return (
     <View style={styles.container}>
-      <Text>Setting!</Text>
+      <Text >Setting!</Text>
       <StatusBar style="auto" />
     </View>
   );

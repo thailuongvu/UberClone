@@ -1,11 +1,11 @@
 import React from "react";
 import { Button, Text, View } from 'react-native';
-function RideScreen({ navigation }) {
+function CarScreen({ navigation }) {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Choose Ride</Text>
+      <View className="flex-1 items-center justify-center bg-white">
+        <Text>Choose Car</Text>
         <Button title="Go back" onPress={() => navigation.goBack()} />
       </View>
     );
   }
-  export default RideScreen
+  export default CarScreen

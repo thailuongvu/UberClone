@@ -6,8 +6,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { AntDesign } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './src/routes/homeStack'
-import Setting from'./src/routes/settingStack'
+import Setting from './src/routes/settingStack';
+
+
 
 
 const Tab = createBottomTabNavigator();

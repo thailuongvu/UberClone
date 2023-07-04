@@ -2,14 +2,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { SafeAreaView } from 'react-native-web';
+import { SafeAreaView } from 'react-native';
 import Separator from '../components/separators';
-import { createStackNavigator } from '@react-navigation/stack';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import homeScreen from '../screens/home';
-import rideScreen from '../screens/ride';
-
+import HomeScreen from '../screens/home';
+import RideScreen from '../screens/ride';
+import CarScreen from '../screens/car';
 
 
 const HomeStack = createNativeStackNavigator();
@@ -19,9 +19,10 @@ function HomeStackScreen() {
     <HomeStack.Navigator screenOptions={{
      
     }}>
-      <HomeStack.Screen name="Home" component={homeScreen}/>
+      <HomeStack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
       
-      <HomeStack.Screen name="rideScreen" component={rideScreen } />
+      <HomeStack.Screen name="rideScreen" component={RideScreen } />
+      <HomeStack.Screen name="carScreen" component={CarScreen } />
     </HomeStack.Navigator>
   );
 }

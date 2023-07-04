@@ -1,10 +1,46 @@
 import React from "react";
-import { Button,View,Text,StyleSheet,SafeAreaView,TouchableOpacity,Image, ImageBackground } from "react-native-web";
+import { AntDesign } from '@expo/vector-icons';
+import { Button,View,Text,StyleSheet,SafeAreaView,TouchableOpacity,Image, ImageBackground } from "react-native";
+
+import { TextInput } from "react-native-gesture-handler";
+import Separator from "../components/separators";
 
 
-function homeScreen({ navigation }) {
+function HomeScreen({ navigation }) {
+
     return (
       <SafeAreaView>
+        <Text></Text>
+          <View className='flex-row pb-3 items-center mx-4 space-x-2 mt-8 px-1'>
+            <Image source={{uri:'https://lelogama.go-jek.com/component/factsheet/icon/2_4.54.18_PM.jpg'}}
+            className='h-10 w-10 bg-gray-300 p-4 rounded-full'/>
+
+             
+            
+            <View className='flex-1'> 
+              <Text className="font-bold text-gray-400 text-xs">Grab now</Text>
+              <Text className='font-bold text-xl'>Current Location
+                <AntDesign name="caretdown" size={15} color="black" />
+              </Text>
+            </View>
+            
+            <TouchableOpacity onPress={() =>navigation.navigate('rideScreen')}>
+              <AntDesign name="user" size={30} color="black" />
+            </TouchableOpacity>
+
+          </View>
+          {/* {Search} */}
+          
+          <View>
+            <View className='flex-row space-x-2 bg-gray-200 p-3 mx-2'> 
+            <AntDesign name="search1" size={30} color="black" />
+            <TextInput placeholder="Find your destination" ></TextInput>
+            </View>
+          </View>
+          <Separator/>
+
+
+
         <View style={[styles.container,{flexDirection:'row'}]}>
           
         <TouchableOpacity
@@ -24,7 +60,7 @@ function homeScreen({ navigation }) {
         <TouchableOpacity
             style={styles.buttonFacebookStyle}
             activeOpacity={0.5}
-            onPress={() =>navigation.navigate('rideScreen')}>
+            onPress={() =>navigation.navigate('carScreen')}>
           <Image
             source={
                 require('../../assets/car.jpg')
@@ -38,7 +74,7 @@ function homeScreen({ navigation }) {
           
         </View>
         <View>
-          
+
         </View>
       </SafeAreaView>
     );
@@ -69,4 +105,4 @@ function homeScreen({ navigation }) {
     },
   });
 
-export default homeScreen
+export default HomeScreen
