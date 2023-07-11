@@ -10,6 +10,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/home';
 import RideScreen from '../screens/ride';
 import CarScreen from '../screens/car';
+import ProfileScreen from '../screens/profile';
 
 
 const HomeStack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ function HomeStackScreen() {
       
       <HomeStack.Screen name="rideScreen" component={RideScreen } />
       <HomeStack.Screen name="carScreen" component={CarScreen } />
+      <HomeStack.Screen name="profileScreen" component={ProfileScreen } />
     </HomeStack.Navigator>
   );
 }
