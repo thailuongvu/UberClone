@@ -19,7 +19,7 @@ const SearchBar = () => {
 
         query={{
             key:GOOGLE_MAPS_APIKEY,
-            language: 'vn',
+            language: 'en',
         }}
         nearbyPlacesAPI='GooglePlacesSearch'
 
