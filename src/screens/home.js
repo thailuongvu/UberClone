@@ -17,6 +17,7 @@ import Separator from '../components/separators'
 import NavOptions from '../components/NavOptions'
 import NavFavourites from '../components/NavFavourites'
 import FlatListSlide from '../components/FlatListSlide'
+import SearchBar from '../components/SearchBar'
 
 function HomeScreen({ navigation }) {
   return (
@@ -40,13 +41,15 @@ function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       {/* {Search} */}
+      <SearchBar/>
 
-      <View>
+
+      {/* <View>
         <View className='flex-row space-x-2 bg-gray-200 p-3 mx-2'>
           <AntDesign name='search1' size={30} color='black' />
           <TextInput placeholder='Find your destination'></TextInput>
         </View>
-      </View>
+      </View> */}
       <Separator />
 
       <NavOptions />
