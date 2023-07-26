@@ -9,11 +9,18 @@ const SearchBar = () => {
   const dispatch = useDispatch()
 
   return (
-    <View>
-    <GooglePlacesAutocomplete
+    <View className='flex-1'>  
+    <GooglePlacesAutocomplete 
+
       placeholder='Search Destinations'
       keepResultsAfterBlur={true}
-      styles={{ container: { flex: 0 }, textInput: { fontSize: 18 } }}
+      styles={{
+        textInputContainer: {
+          backgroundColor: 'grey',
+        }, 
+         container: { flex: 0 },
+         textInput: { fontSize: 18, borderColor:'gray' } 
+        }}
       onPress={(data, details = null) => {
         dispatch(setOrigin({
            location: details.geometry.location,
@@ -32,6 +39,7 @@ const SearchBar = () => {
         components: 'country:vn',
       }}
       nearbyPlacesAPI='GooglePlacesSearch'
+      debounce={400}
     />
     </View>
   )
