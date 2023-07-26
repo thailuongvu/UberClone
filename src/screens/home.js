@@ -41,8 +41,7 @@ function HomeScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       {/* {Search} */}
-      <SearchBar/>
-
+      <SearchBar />
 
       {/* <View>
         <View className='flex-row space-x-2 bg-gray-200 p-3 mx-2'>
