@@ -26,7 +26,7 @@ const Button = (props) => {
 
 const styles = StyleSheet.create({
     text: {
-        color: '#000',
+        color: '#fff',
         fontSize: 20,
         margin: 10,
         textAlign: 'center',

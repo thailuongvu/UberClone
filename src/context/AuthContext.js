@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({children}) => {
-  const [userInfo, setUserInfo] = useState({name:'Huy'});
+  const [userInfo, setUserInfo] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [splashLoading, setSplashLoading] = useState(false);
   const RegisterFunction = (name, phone, password, confirm_password) => {

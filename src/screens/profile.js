@@ -1,10 +1,13 @@
 import React from "react";
-import { Button, Text, View,Image,TouchableOpacity, FlatList } from 'react-native';
+import { Text, View,Image,TouchableOpacity, FlatList } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { Touchable } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+import Button from "../components/Button";
 const data=[
     {
         id:'123',
@@ -32,6 +35,8 @@ const data=[
     },
 ]
 function ProfileScreen({ navigation }) {
+    const {logout} = useContext(AuthContext);
+    const logoutFunction = () => {logout()}
     return (
 
       <View className="flex-1">
@@ -79,7 +84,12 @@ function ProfileScreen({ navigation }) {
             </FlatList>
         </View>
         
-        <Button title="Go back" onPress={() => navigation.goBack()} />
+        <Button
+                style={{marginTop: 20, width: 380, height: 50, backgroundColor: '#333', marginLeft: 8, borderRadius: 10}}
+                title='LOGOUT'
+                onPressFunction={logoutFunction}
+                color='#fff'
+            />
       </View>
     );
   }

@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
-import { View, StyleSheet, Text, Image, TextInput, Alert, TouchableOpacity} from "react-native";
+import { View, StyleSheet, Text, Image, TextInput, Alert, TouchableOpacity, ScrollView} from "react-native";
 import Button from "../components/Button";
 import { AuthContext } from "../context/AuthContext";
 import Spinner from "react-native-loading-spinner-overlay";
+
 function Register({navigation}) {
     const [phone, setPhone] = useState(null);
     const [name, setName] = useState(null);
@@ -22,46 +23,48 @@ function Register({navigation}) {
         }
     }
     return ( 
-        <View style={styles.body}>
-            <Spinner visible={isLoading} />
-            <Image
-                style={styles.logo}
-                source={require('../../assets/logo/logo1.png')}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Phone number"
-                onChangeText={(value)=>{setPhone(value)}}
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Full Name"
-                onChangeText={(value)=>{setName(value)}}
-            />
-             <TextInput
-                secureTextEntry={true}
-                style={styles.input}
-                placeholder="Password"
-                onChangeText={(value)=>{setPassword(value)}}
-            />
-            <TextInput
-                secureTextEntry={true}
-                style={styles.input}
-                placeholder="Confirm Password"
-                onChangeText={(value)=>{setConfirmPassword(value)}}
-            />
-            <Button
-                title='Register'
-                color='#33CCFF'
-                onPressFunction={setData}
-            />
-            <View style={{flexDirection: 'row', marginTop: 20}}>
-                <Text>Have an account? </Text>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
-                    <Text style={{color: '#347deb'}}>Login</Text>
-                </TouchableOpacity>
+       <ScrollView>
+            <View style={styles.body}>
+                <Spinner visible={isLoading} />
+                <Image
+                    style={styles.logo}
+                    source={require('../../assets/logo/logo1.png')}
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Phone number"
+                    onChangeText={(value)=>{setPhone(value)}}
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder="Full Name"
+                    onChangeText={(value)=>{setName(value)}}
+                />
+                 <TextInput
+                    secureTextEntry={true}
+                    style={styles.input}
+                    placeholder="Password"
+                    onChangeText={(value)=>{setPassword(value)}}
+                />
+                <TextInput
+                    secureTextEntry={true}
+                    style={styles.input}
+                    placeholder="Confirm Password"
+                    onChangeText={(value)=>{setConfirmPassword(value)}}
+                />
+                <Button
+                    title='Register'
+                    color='#33CCFF'
+                    onPressFunction={setData}
+                />
+                <View style={{flexDirection: 'row', marginTop: 20}}>
+                    <Text>Have an account? </Text>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}>
+                        <Text style={{color: '#347deb'}}>Login</Text>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
+       </ScrollView>
      );
 }
 

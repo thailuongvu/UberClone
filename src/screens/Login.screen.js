@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, Image, TextInput, Alert, TouchableOpacity} from
 import Button from "../components/Button";
 import { AuthContext } from "../context/AuthContext";
 import Spinner from "react-native-loading-spinner-overlay";
+import Separator from "../components/separators";
 function Login({navigation}) {
     const [phone, setPhone] = useState('');
     const [password, setPassword] = useState('');
@@ -35,16 +36,19 @@ function Login({navigation}) {
                 onChangeText={(value)=>{setPassword(value)}}
             />
             <Button
-                title='Login'
-                color='#33CCFF'
+                style={{marginTop: 20, width: 330, height: 50, backgroundColor: '#333', marginLeft: 8, borderRadius: 10}}
+                title='LOGIN'
                 onPressFunction={setData}
+                color='#fff'
             />
-            <View style={{flexDirection: 'row', marginTop: 20}}>
+             <Separator/>
+            <View style={{flexDirection: 'row', marginTop: 20}} >
                 <Text>Don't have an account? </Text>
                 <TouchableOpacity onPress={()=>{navigation.navigate('Register')}}>
                     <Text style={{color: '#347deb'}}>Register</Text>
                 </TouchableOpacity>
             </View>
+           
         </View>
         
      );
