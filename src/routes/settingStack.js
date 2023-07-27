@@ -1,13 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { StatusBar } from 'expo-status-bar'
+import { StyleSheet, Text, View } from 'react-native'
+import Ionicons from '@expo/vector-icons/Ionicons'
 export default function Setting() {
   return (
     <View style={styles.container}>
-      <Text >Setting!</Text>
-      <StatusBar style="auto" />
+      <Text>Setting!</Text>
+      <StatusBar style='auto' />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
